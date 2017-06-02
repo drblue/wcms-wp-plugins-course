@@ -52,11 +52,11 @@ function wm_movie_content_filter($content) {
 		$movie_genres = get_the_term_list(
 			get_the_ID(), // current post's id
 			"movie-genre", // taxonomy to get terms for
-			"", // prefix result with empty string
+			"<p>Genres: ", // prefix result with empty string
 			", ", // separate result with ", "
-			"" // suffix result with empty string
+			"</p>" // suffix result with empty string
 		);
-		$content .= "<p>Genres: " . $movie_genres . "</p>";
+		$content .= $movie_genres;
 	}
 	return $content;
 }
