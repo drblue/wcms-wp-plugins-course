@@ -8,6 +8,14 @@
  * License: WTFPL
  */
 
+/**
+ * Load and init CPT Template Injector with our CPTs
+ */
+require "WCMS_Plugin_Helper_CPT_Template_Injector.php";
+
+WCMS_Plugin_Helper\CPT_Template_Injector::init([
+	'hotel'
+]);
 
 /**
  * Hotel Info Widget
