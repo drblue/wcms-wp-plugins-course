@@ -36,13 +36,15 @@ class WCMS_Hotel_Info_Widget extends WP_Widget {
 
 		echo '<div class="textwidget">';
 
+		// details
 		echo "<p>Rooms: {$rooms}</p>";
 		echo "<p>Address: {$map['address']}</p>";
 		echo "<p>Email: <a href=\"mailto:{$email}\">{$email}</a></p>";
 		echo "<p>Phone: {$phone}</p>";
 		echo "<p>Price/night: {$price} kr</p>";
 
-		if (!empty($map)) {
+		// map
+		if (!empty($map) && $instance['show_map'] === true) {
 			$map_code = file_get_contents(__DIR__ . "/map.html");
 			echo $map_code;
 			echo '<div class="acf-map">
@@ -57,10 +59,15 @@ class WCMS_Hotel_Info_Widget extends WP_Widget {
 	public function form($instance) {
 
 		$title = ! empty($instance['title']) ? $instance['title'] : esc_html__('', 'text_domain');
+		$show_map = $instance['show_map'];
 		?>
 		<p>
 			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_attr_e('Title:', 'text_domain'); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
+		</p>
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id('show_map')); ?>"><?php esc_attr_e('Show map:', 'text_domain'); ?></label>
+			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('show_map')); ?>" name="<?php echo esc_attr($this->get_field_name('show_map')); ?>" type="checkbox" <?php echo ($show_map) ? "checked" : ""; ?>>
 		</p>
 		<?php
 
@@ -70,6 +77,7 @@ class WCMS_Hotel_Info_Widget extends WP_Widget {
 
 		$instance = array();
 		$instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+		$instance['show_map'] = (!empty($new_instance['show_map']));
 
 		return $instance;
 	}
