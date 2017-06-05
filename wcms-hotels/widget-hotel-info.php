@@ -27,6 +27,7 @@ class WCMS_Hotel_Info_Widget extends WP_Widget {
 		$phone = get_field('phone');
 		$email = get_field('email');
 		$price = get_field('price');
+		$images = get_field('gallery');
 
 		echo $args['before_widget'];
 
@@ -42,6 +43,16 @@ class WCMS_Hotel_Info_Widget extends WP_Widget {
 		echo "<p>Email: <a href=\"mailto:{$email}\">{$email}</a></p>";
 		echo "<p>Phone: {$phone}</p>";
 		echo "<p>Price/night: {$price} kr</p>";
+
+		// image gallery
+		if (!empty($images)) {
+			echo "<p><strong>Image Gallery</strong></p>";
+			echo "<ul class='wcmsh-image-gallery'>";
+			foreach ($images as $image) {
+				echo "<li><a href='{$image['url']}' data-lightbox='wcmsh-image-gallery'><img src='{$image['sizes']['thumbnail']}' /></a></li>";
+			}
+			echo "</ul>";
+		}
 
 		// map
 		if (!empty($map) && $instance['show_map'] === true) {
