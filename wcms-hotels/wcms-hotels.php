@@ -8,14 +8,24 @@
  * License: WTFPL
  */
 
+
+/**
+ * Hotel Info Widget
+ */
 require "widget-hotel-info.php";
 
+/**
+ * Add our Google Maps API key to the ACF plugin.
+ */
 function wcmsh_google_map_api($api){
 	$api['key'] = 'AIzaSyAa38IcC1aetYkYfpdKdBWTU3qLtn_UqEE';
 	return $api;
 }
 add_filter('acf/fields/google_map/api', 'wcmsh_google_map_api');
 
+/**
+ * Styles and scripts.
+ */
 function wcmsh_styles() {
 	// lightbox
 	wp_enqueue_style('wcmsh-lightbox', 'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css');
