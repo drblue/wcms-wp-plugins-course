@@ -23,5 +23,6 @@ function wcmsh_styles() {
 
 	// our plugin's styles
 	wp_enqueue_style('wcmsh-styles', plugin_dir_url(__FILE__) . "assets/css/style.css");
+	wp_enqueue_script('wcmsh-script', plugin_dir_url(__FILE__) . "assets/js/script.js", array('jquery', 'wcmsh-lightbox'), '', true);
 }
 add_action('wp_enqueue_scripts', 'wcmsh_styles');
