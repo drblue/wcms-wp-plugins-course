@@ -1,0 +1,106 @@
+[
+    {
+        "key": "group_5937e8f7a32f8",
+        "title": "Gear Details",
+        "fields": [
+            {
+                "key": "field_5937e90f4d96d",
+                "label": "Price",
+                "name": "price",
+                "type": "text",
+                "instructions": "Don't forget to add if the rent is per hour, day or week.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5937e93f4d96e",
+                "label": "Email",
+                "name": "email",
+                "type": "email",
+                "instructions": "Email address to person lending out this gear.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "someone@somewhere.org",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_5937e9654d96f",
+                "label": "Phone",
+                "name": "phone",
+                "type": "text",
+                "instructions": "Phone number to person lending out this gear.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "+1-555-CAMERAS",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5937f4320eede",
+                "label": "Gallery",
+                "name": "gallery",
+                "type": "gallery",
+                "instructions": "Add images to show off this gear.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": "",
+                "max": "",
+                "insert": "append",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "gear"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "left",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

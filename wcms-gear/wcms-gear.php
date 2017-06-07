@@ -9,6 +9,9 @@
  */
 
 require "widget-gear-info.php";
+require "acf.php";
+require "cpt.php";
+require "ct.php";
 
 function wcms_the_content_filter($content) {
 	if (get_post_type() !== 'gear') {
