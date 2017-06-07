@@ -1,0 +1,25 @@
+Gear				<-- Custom Post Type
+- Title
+- Description
+- Price				-- Custom Field
+- Contact Email		-- Custom Field
+- Contact Phone		-- Custom Field
+
+Objekt av typen Gear blir Gear Posts.
+
+Gear Type			<-- Custom Taxonomy
+* Camera
+* * Canon
+* * Nikon
+* * Full-Frame Camera
+* * APS-C Camera
+* Lens
+* * Wide Angle
+* * Zoom
+* * Tele Zoom
+* * Macro
+* Bag
+* Tripod
+* Flash
+
+Objekt i taxonomin Gear Type blir Terms.
