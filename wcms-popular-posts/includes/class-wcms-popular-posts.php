@@ -119,6 +119,11 @@ class Wcms_Popular_Posts {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wcms-popular-posts-public.php';
 
+		/**
+		 * Load widget to show post count.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wcms-popular-posts-widget.php';
+
 		$this->loader = new Wcms_Popular_Posts_Loader();
 
 	}
