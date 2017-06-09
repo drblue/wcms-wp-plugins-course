@@ -102,7 +102,7 @@ class Wcms_Popular_Posts_Public {
 
 	public function update_post_counter() {
 		// here we update this post's counter with +1
-		if (is_single() && get_post_type() === "gear" && !is_user_logged_in()) {
+		if (is_single() && !is_user_logged_in()) {
 			$counter = get_post_meta(get_the_ID(), 'wcms-popular-posts-counter', true);
 			if (empty($counter)) {
 				$counter = 0;
@@ -115,7 +115,7 @@ class Wcms_Popular_Posts_Public {
 	}
 
 	public function the_content_filter($content) {
-		if (is_single() && get_post_type() === "gear") {
+		if (is_single()) {
 			$counter = get_post_meta(get_the_ID(), 'wcms-popular-posts-counter', true);
 			$content = "<p><small>This page has been visited {$counter} times.</small></p>" . $content;
 		}
