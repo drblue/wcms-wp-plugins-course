@@ -21,6 +21,9 @@ class WCMS_Gear_Info_Widget extends WP_Widget {
 	);
 
 	public function widget($args, $instance) {
+		if (get_post_type() !== "gear") {
+			return;
+		}
 
 		$price = get_field('price');
 		$email = get_field('email');
