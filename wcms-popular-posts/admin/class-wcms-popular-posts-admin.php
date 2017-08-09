@@ -97,7 +97,13 @@ class Wcms_Popular_Posts_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wcms-popular-posts-admin.js', array( 'jquery' ), $this->version, false );
+	}
 
+	public function ajax_counter() {
+		$post_id = intval($_POST['post_id']);
+		$counter = get_post_meta($post_id, 'wcms-popular-posts-counter', true);
+		echo $counter;
+		wp_die();
 	}
 
 }

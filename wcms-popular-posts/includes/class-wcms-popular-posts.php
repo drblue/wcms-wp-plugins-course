@@ -159,6 +159,8 @@ class Wcms_Popular_Posts {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		$this->loader->add_action('wp_ajax_wcms_popular_posts_counter', $plugin_admin, 'ajax_counter');
+		$this->loader->add_action('wp_ajax_nopriv_wcms_popular_posts_counter', $plugin_admin, 'ajax_counter');
 	}
 
 	/**

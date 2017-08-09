@@ -29,4 +29,16 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+	setInterval(getPopularPostsCounter, 5000);
+
+	function getPopularPostsCounter() {
+		var data = {
+			action: 'wcms_popular_posts_counter',
+			post_id: ajax_object.post_id
+		};
+		$.post(ajax_object.ajax_url, data, function(response) {
+			$('.wcms-popular-posts-counter').html(response);
+		});
+	}
+
 })( jQuery );

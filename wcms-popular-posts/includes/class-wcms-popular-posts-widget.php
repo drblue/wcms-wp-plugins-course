@@ -31,7 +31,7 @@ class WCMS_Popular_Posts_Widget extends WP_Widget {
 			}
 
 			echo '<div class="textwidget">';
-			echo "<p><small>This page has been visited {$counter} times.</small></p>";
+			echo "<p><small>This page has been visited <span class='wcms-popular-posts-counter'>{$counter}</span> times.</small></p>";
 			echo '</div>';
 			echo $args['after_widget'];
 		}

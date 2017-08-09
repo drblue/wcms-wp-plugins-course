@@ -98,6 +98,11 @@ class Wcms_Popular_Posts_Public {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wcms-popular-posts-public.js', array( 'jquery' ), $this->version, false );
 
+		wp_localize_script($this->plugin_name, 'ajax_object', [
+			'ajax_url' => admin_url('admin-ajax.php'),
+			'post_id' => get_the_ID(),
+		]);
+
 	}
 
 	public function update_post_counter() {
@@ -117,7 +122,7 @@ class Wcms_Popular_Posts_Public {
 	public function the_content_filter($content) {
 		if (is_single()) {
 			$counter = get_post_meta(get_the_ID(), 'wcms-popular-posts-counter', true);
-			$content = "<p><small>This page has been visited {$counter} times.</small></p>" . $content;
+			$content = "<p><small>This page has been visited <span class='wcms-popular-posts-counter'>{$counter}</span> times.</small></p>" . $content;
 		}
 
 		return $content;

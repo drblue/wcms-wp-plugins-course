@@ -24,7 +24,7 @@ function set_acf_settings_dir( $dir ) {
 add_filter('acf/settings/dir', 'set_acf_settings_dir');
 
 // Hide ACF field group menu item
-add_filter('acf/settings/show_admin', '__return_false');
+// add_filter('acf/settings/show_admin', '__return_false');
 
 // Set ACF JSON save folder
 function set_acf_json_save_folder( $path ) {
